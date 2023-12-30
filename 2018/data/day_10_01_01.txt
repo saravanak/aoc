@@ -1,0 +1,375 @@
+position=< 192,  139> velocity=< 2,  4>
+position=< 186,  146> velocity=< 5, -4>
+position=< 213,  142> velocity=< 5,  2>
+position=< 188,  149> velocity=<-2, -5>
+position=< 239,  142> velocity=<-2, -3>
+position=< 235,  137> velocity=<-4,  4>
+position=< 206,  143> velocity=<-4, -3>
+position=< 213,  135> velocity=< 5,  5>
+position=< 194,  140> velocity=< 5,  4>
+position=< 220,  143> velocity=<-2,  5>
+position=< 215,  142> velocity=< 3,  4>
+position=< 231,  140> velocity=<-5,  5>
+position=< 194,  141> velocity=< 5, -1>
+position=< 208,  147> velocity=<-1,  1>
+position=< 212,  152> velocity=< 1, -4>
+position=< 220,  144> velocity=< 1, -1>
+position=< 213,  138> velocity=<-3,  5>
+position=< 226,  145> velocity=< 5, -5>
+position=< 195,  153> velocity=<-1, -5>
+position=< 218,  142> velocity=< 5, -1>
+position=< 227,  147> velocity=<-1, -2>
+position=< 207,  144> velocity=< 4,  4>
+position=< 222,  142> velocity=<-1, -3>
+position=< 246,  146> velocity=< 1,  2>
+position=< 237,  139> velocity=< 5,  2>
+position=< 194,  139> velocity=< 4,  4>
+position=< 220,  142> velocity=<-2,  2>
+position=< 231,  139> velocity=< 3,  5>
+position=< 250,  138> velocity=<-5,  3>
+position=< 223,  140> velocity=< 3,  1>
+position=< 229,  142> velocity=< 1,  5>
+position=< 223,  145> velocity=< 3, -1>
+position=< 216,  149> velocity=<-2, -2>
+position=< 194,  135> velocity=<-3,  5>
+position=< 249,  146> velocity=<-3,  1>
+position=< 189,  135> velocity=<-3,  5>
+position=< 230,  149> velocity=<-1, -4>
+position=< 200,  138> velocity=<-3,  5>
+position=< 192,  149> velocity=< 2, -4>
+position=< 243,  141> velocity=< 1,  1>
+position=< 218,  142> velocity=< 2,  1>
+position=< 236,  144> velocity=<-5,  1>
+position=< 193,  148> velocity=<-5, -5>
+position=< 207,  146> velocity=<-2,  2>
+position=< 192,  146> velocity=< 2, -2>
+position=< 204,  148> velocity=<-2, -2>
+position=< 187,  147> velocity=<-1,  1>
+position=< 233,  147> velocity=<-2, -3>
+position=< 203,  142> velocity=<-1, -1>
+position=< 204,  146> velocity=<-2,  2>
+position=< 192,  141> velocity=<-1,  1>
+position=< 230,  143> velocity=< 4, -2>
+position=< 200,  144> velocity=< 2,  1>
+position=< 231,  135> velocity=< 3,  4>
+position=< 231,  143> velocity=<-5, -3>
+position=< 190,  146> velocity=<-3, -3>
+position=< 225,  142> velocity=< 1,  3>
+position=< 187,  138> velocity=< 2,  1>
+position=< 222,  145> velocity=<-4, -1>
+position=< 224,  144> velocity=< 2,  3>
+position=< 217,  146> velocity=< 4, -3>
+position=< 235,  143> velocity=< 2, -4>
+position=< 228,  143> velocity=<-2, -3>
+position=< 226,  138> velocity=< 2,  5>
+position=< 238,  146> velocity=< 4, -3>
+position=< 189,  141> velocity=<-2, -2>
+position=< 233,  141> velocity=< 5,  2>
+position=< 192,  140> velocity=< 2,  4>
+position=< 215,  143> velocity=<-3,  5>
+position=< 211,  145> velocity=<-1, -3>
+position=< 192,  145> velocity=<-1, -5>
+position=< 211,  139> velocity=< 4,  5>
+position=< 238,  146> velocity=< 4,  1>
+position=< 184,  141> velocity=< 5,  2>
+position=< 243,  138> velocity=<-5,  5>
+position=< 194,  134> velocity=< 5,  5>
+position=< 216,  147> velocity=< 2, -2>
+position=< 190,  142> velocity=<-4, -3>
+position=< 214,  145> velocity=<-1,  3>
+position=< 186,  142> velocity=< 4, -3>
+position=< 248,  143> velocity=<-2, -3>
+position=< 184,  137> velocity=< 2,  4>
+position=< 221,  134> velocity=< 1,  5>
+position=< 196,  141> velocity=< 3,  2>
+position=< 189,  145> velocity=<-3, -1>
+position=< 206,  143> velocity=<-4,  5>
+position=< 233,  147> velocity=<-5, -5>
+position=< 211,  139> velocity=< 4,  1>
+position=< 247,  146> velocity=<-1,  1>
+position=< 184,  144> velocity=< 2,  3>
+position=< 206,  138> velocity=<-4,  5>
+position=< 208,  141> velocity=< 5, -2>
+position=< 191,  151> velocity=<-5, -5>
+position=< 229,  136> velocity=< 2,  4>
+position=< 217,  136> velocity=< 5,  3>
+position=< 198,  145> velocity=<-4, -5>
+position=< 182,  142> velocity=< 4,  4>
+position=< 234,  140> velocity=< 1,  3>
+position=< 228,  143> velocity=< 1,  1>
+position=< 233,  142> velocity=< 5, -3>
+position=< 244,  146> velocity=<-1, -3>
+position=< 232,  144> velocity=< 5, -1>
+position=< 226,  137> velocity=<-3,  5>
+position=< 196,  142> velocity=<-2,  5>
+position=< 238,  140> velocity=< 5,  3>
+position=< 227,  148> velocity=< 3, -2>
+position=< 200,  143> velocity=<-1,  1>
+position=< 195,  145> velocity=< 4, -3>
+position=< 219,  148> velocity=<-4, -2>
+position=< 205,  134> velocity=<-3,  5>
+position=< 226,  145> velocity=< 2, -2>
+position=< 190,  137> velocity=<-2,  2>
+position=< 244,  141> velocity=<-2, -2>
+position=< 202,  143> velocity=<-3, -1>
+position=< 217,  147> velocity=<-2, -3>
+position=< 236,  143> velocity=<-2, -2>
+position=< 245,  142> velocity=<-3,  1>
+position=< 211,  135> velocity=< 3,  4>
+position=< 217,  137> velocity=< 2,  2>
+position=< 181,  139> velocity=< 5,  2>
+position=< 232,  142> velocity=<-4,  1>
+position=< 207,  141> velocity=< 3,  2>
+position=< 185,  143> velocity=< 3, -4>
+position=< 241,  144> velocity=< 1, -2>
+position=< 206,  145> velocity=< 4,  2>
+position=< 212,  151> velocity=<-2, -4>
+position=< 240,  141> velocity=< 2, -1>
+position=< 241,  151> velocity=< 4, -5>
+position=< 196,  144> velocity=< 3, -2>
+position=< 197,  141> velocity=<-3,  5>
+position=< 222,  143> velocity=< 1,  5>
+position=< 206,  142> velocity=< 4, -1>
+position=< 208,  149> velocity=<-5, -1>
+position=< 185,  140> velocity=< 4, -1>
+position=< 201,  143> velocity=<-2,  5>
+position=< 217,  143> velocity=<-5, -4>
+position=< 213,  135> velocity=< 2,  5>
+position=< 199,  146> velocity=<-4, -3>
+position=< 230,  149> velocity=< 4, -4>
+position=< 230,  141> velocity=< 4, -1>
+position=< 191,  137> velocity=< 3,  5>
+position=< 202,  148> velocity=<-3, -1>
+position=< 228,  139> velocity=<-5,  1>
+position=< 247,  140> velocity=<-5,  2>
+position=< 195,  136> velocity=<-1,  4>
+position=< 228,  144> velocity=<-5, -3>
+position=< 187,  140> velocity=< 3,  3>
+position=< 231,  145> velocity=< 3,  3>
+position=< 228,  151> velocity=< 3, -4>
+position=< 214,  135> velocity=<-3,  4>
+position=< 217,  143> velocity=< 3, -4>
+position=< 224,  137> velocity=< 2,  2>
+position=< 221,  145> velocity=< 2, -4>
+position=< 215,  141> velocity=< 3, -2>
+position=< 237,  148> velocity=< 5, -5>
+position=< 214,  143> velocity=< 4, -3>
+position=< 232,  151> velocity=< 2, -3>
+position=< 218,  142> velocity=< 2, -3>
+position=< 231,  137> velocity=<-4,  4>
+position=< 233,  142> velocity=< 1, -2>
+position=< 204,  142> velocity=<-2, -2>
+position=< 219,  142> velocity=<-4,  5>
+position=< 211,  143> velocity=<-5,  5>
+position=< 214,  136> velocity=< 5,  3>
+position=< 183,  146> velocity=< 3,  2>
+position=< 233,  148> velocity=<-4, -3>
+position=< 190,  134> velocity=<-4,  5>
+position=< 221,  145> velocity=<-3, -2>
+position=< 224,  148> velocity=<-2, -3>
+position=< 197,  136> velocity=< 2,  4>
+position=< 228,  138> velocity=<-1,  2>
+position=< 239,  146> velocity=<-5, -2>
+position=< 183,  141> velocity=< 4,  2>
+position=< 223,  142> velocity=< 3,  2>
+position=< 248,  140> velocity=<-4,  2>
+position=< 192,  146> velocity=<-5, -3>
+position=< 190,  144> velocity=< 4, -2>
+position=< 190,  148> velocity=<-4, -1>
+position=< 209,  144> velocity=<-4,  4>
+position=< 211,  150> velocity=< 3, -3>
+position=< 203,  143> velocity=<-1,  4>
+position=< 186,  145> velocity=< 5, -4>
+position=< 190,  143> velocity=<-4, -3>
+position=< 194,  145> velocity=<-4, -2>
+position=< 235,  142> velocity=<-4,  5>
+position=< 237,  145> velocity=<-3,  2>
+position=< 233,  143> velocity=<-2, -1>
+position=< 203,  144> velocity=<-1, -1>
+position=< 184,  146> velocity=< 2, -1>
+position=< 193,  141> velocity=< 4,  2>
+position=< 234,  151> velocity=<-4, -5>
+position=< 189,  141> velocity=<-1, -2>
+position=< 198,  148> velocity=< 1, -2>
+position=< 213,  147> velocity=< 5, -1>
+position=< 244,  144> velocity=< 2,  3>
+position=< 211,  149> velocity=<-5, -1>
+position=< 234,  150> velocity=<-3, -4>
+position=< 241,  139> velocity=<-4,  4>
+position=< 232,  138> velocity=<-1,  3>
+position=< 241,  146> velocity=< 2, -3>
+position=< 230,  145> velocity=< 4, -3>
+position=< 189,  140> velocity=<-3, -1>
+position=< 246,  148> velocity=<-4, -3>
+position=< 228,  144> velocity=<-2,  3>
+position=< 208,  146> velocity=<-1,  2>
+position=< 229,  152> velocity=< 5, -5>
+position=< 191,  143> velocity=< 3, -4>
+position=< 197,  141> velocity=<-3,  2>
+position=< 213,  143> velocity=< 5,  4>
+position=< 234,  147> velocity=<-3, -5>
+position=< 215,  137> velocity=<-2,  2>
+position=< 183,  145> velocity=< 3, -2>
+position=< 216,  141> velocity=< 5,  3>
+position=< 243,  145> velocity=< 2, -4>
+position=< 201,  141> velocity=<-2,  5>
+position=< 221,  138> velocity=<-2,  5>
+position=< 233,  143> velocity=< 1,  2>
+position=< 216,  146> velocity=< 2, -4>
+position=< 215,  153> velocity=<-2, -5>
+position=< 206,  142> velocity=< 4,  3>
+position=< 234,  149> velocity=<-5, -5>
+position=< 236,  145> velocity=<-2, -1>
+position=< 191,  144> velocity=<-5, -2>
+position=< 237,  142> velocity=< 5, -2>
+position=< 219,  144> velocity=< 3, -1>
+position=< 203,  143> velocity=<-4,  3>
+position=< 201,  149> velocity=< 4, -1>
+position=< 242,  147> velocity=<-5, -4>
+position=< 196,  150> velocity=<-2, -5>
+position=< 217,  140> velocity=< 2,  3>
+position=< 228,  140> velocity=< 1,  5>
+position=< 201,  142> velocity=<-2, -1>
+position=< 237,  141> velocity=< 5,  4>
+position=< 222,  141> velocity=< 5, -1>
+position=< 238,  135> velocity=<-2,  4>
+position=< 213,  143> velocity=< 2,  4>
+position=< 197,  149> velocity=< 5, -3>
+position=< 213,  136> velocity=< 5,  3>
+position=< 223,  146> velocity=< 3, -3>
+position=< 237,  140> velocity=<-3, -1>
+position=< 215,  152> velocity=<-3, -4>
+position=< 223,  142> velocity=< 3,  1>
+position=< 181,  141> velocity=< 5,  5>
+position=< 192,  145> velocity=< 3, -2>
+position=< 250,  142> velocity=<-3, -3>
+position=< 231,  137> velocity=<-3,  5>
+position=< 227,  147> velocity=< 4, -2>
+position=< 225,  143> velocity=< 1, -1>
+position=< 232,  138> velocity=<-1,  1>
+position=< 219,  144> velocity=<-4,  1>
+position=< 217,  153> velocity=< 1, -5>
+position=< 235,  137> velocity=<-4,  5>
+position=< 195,  137> velocity=<-4,  5>
+position=< 213,  143> velocity=<-3,  1>
+position=< 237,  149> velocity=< 5, -5>
+position=< 187,  143> velocity=<-1,  1>
+position=< 228,  151> velocity=<-2, -3>
+position=< 243,  139> velocity=<-1,  1>
+position=< 251,  138> velocity=<-4,  1>
+position=< 212,  148> velocity=< 2, -1>
+position=< 250,  141> velocity=<-3, -2>
+position=< 199,  146> velocity=< 3, -2>
+position=< 188,  138> velocity=< 2,  5>
+position=< 218,  141> velocity=<-4, -2>
+position=< 213,  144> velocity=< 2,  4>
+position=< 239,  134> velocity=<-1,  5>
+position=< 190,  145> velocity=< 1, -5>
+position=< 212,  145> velocity=<-2, -3>
+position=< 246,  145> velocity=<-4, -1>
+position=< 240,  140> velocity=< 2,  2>
+position=< 229,  151> velocity=< 2, -3>
+position=< 226,  145> velocity=< 2, -3>
+position=< 216,  143> velocity=< 2, -1>
+position=< 218,  148> velocity=<-3, -4>
+position=< 206,  148> velocity=< 4, -2>
+position=< 201,  141> velocity=< 1,  5>
+position=< 243,  144> velocity=<-1,  3>
+position=< 216,  147> velocity=<-1, -2>
+position=< 244,  138> velocity=<-5,  1>
+position=< 192,  134> velocity=<-5,  5>
+position=< 236,  141> velocity=<-5,  3>
+position=< 230,  147> velocity=<-4,  1>
+position=< 245,  142> velocity=<-3,  2>
+position=< 233,  146> velocity=<-2, -1>
+position=< 209,  143> velocity=< 1, -2>
+position=< 213,  138> velocity=<-3,  5>
+position=< 220,  144> velocity=<-5,  1>
+position=< 206,  140> velocity=<-4,  2>
+position=< 216,  143> velocity=< 2,  5>
+position=< 203,  144> velocity=< 1,  4>
+position=< 226,  144> velocity=<-4, -5>
+position=< 222,  149> velocity=<-1, -5>
+position=< 232,  142> velocity=< 3, -3>
+position=< 221,  144> velocity=< 2,  3>
+position=< 204,  143> velocity=<-5,  5>
+position=< 208,  139> velocity=< 2,  5>
+position=< 187,  144> velocity=<-1, -4>
+position=< 221,  144> velocity=<-3, -3>
+position=< 235,  138> velocity=<-4,  5>
+position=< 201,  151> velocity=< 1, -3>
+position=< 191,  142> velocity=< 3, -1>
+position=< 227,  142> velocity=<-1, -1>
+position=< 216,  141> velocity=<-2, -2>
+position=< 204,  147> velocity=<-2, -2>
+position=< 216,  143> velocity=<-3,  1>
+position=< 214,  149> velocity=< 1, -1>
+position=< 204,  148> velocity=<-5, -3>
+position=< 198,  145> velocity=<-4, -3>
+position=< 214,  135> velocity=<-4,  5>
+position=< 211,  146> velocity=< 3, -2>
+position=< 222,  144> velocity=< 4, -3>
+position=< 199,  145> velocity=<-5, -4>
+position=< 235,  142> velocity=<-1,  4>
+position=< 226,  140> velocity=< 5,  4>
+position=< 203,  150> velocity=<-4, -2>
+position=< 198,  138> velocity=< 1,  3>
+position=< 202,  147> velocity=<-4, -4>
+position=< 229,  140> velocity=<-2,  1>
+position=< 222,  135> velocity=< 5,  5>
+position=< 189,  150> velocity=< 5, -4>
+position=< 216,  150> velocity=< 2, -4>
+position=< 242,  146> velocity=<-4, -3>
+position=< 189,  140> velocity=<-3,  2>
+position=< 237,  141> velocity=<-1,  2>
+position=< 241,  140> velocity=<-4, -1>
+position=< 238,  145> velocity=< 5, -1>
+position=< 241,  144> velocity=< 3,  1>
+position=< 218,  151> velocity=<-3, -4>
+position=< 225,  148> velocity=<-3, -2>
+position=< 241,  143> velocity=< 3, -1>
+position=< 196,  136> velocity=< 3,  3>
+position=< 190,  136> velocity=< 4,  4>
+position=< 208,  144> velocity=< 2,  3>
+position=< 231,  149> velocity=<-5, -3>
+position=< 217,  148> velocity=<-2, -2>
+position=< 219,  144> velocity=<-1, -5>
+position=< 191,  147> velocity=< 4, -4>
+position=< 239,  142> velocity=<-5, -2>
+position=< 219,  144> velocity=<-1, -4>
+position=< 206,  147> velocity=<-4, -2>
+position=< 213,  140> velocity=<-3,  1>
+position=< 240,  150> velocity=< 2, -4>
+position=< 235,  144> velocity=<-5,  2>
+position=< 189,  139> velocity=<-1,  4>
+position=< 232,  142> velocity=< 2,  1>
+position=< 240,  138> velocity=<-5,  1>
+position=< 199,  144> velocity=< 3, -3>
+position=< 221,  144> velocity=<-3,  1>
+position=< 194,  145> velocity=< 2, -2>
+position=< 217,  146> velocity=< 4, -3>
+position=< 190,  138> velocity=<-4,  3>
+position=< 198,  139> velocity=< 1,  2>
+position=< 194,  139> velocity=<-3,  2>
+position=< 245,  153> velocity=<-3, -5>
+position=< 235,  134> velocity=< 3,  5>
+position=< 229,  147> velocity=<-3, -1>
+position=< 219,  135> velocity=<-4,  5>
+position=< 229,  147> velocity=<-3,  1>
+position=< 186,  136> velocity=< 4,  3>
+position=< 187,  140> velocity=<-1,  3>
+position=< 233,  140> velocity=< 3, -1>
+position=< 191,  137> velocity=< 3,  4>
+position=< 214,  144> velocity=<-2, -5>
+position=< 221,  148> velocity=< 5, -5>
+position=< 195,  139> velocity=< 4,  1>
+position=< 226,  145> velocity=<-5, -1>
+position=< 247,  145> velocity=<-5, -4>
+position=< 218,  143> velocity=< 3, -4>
+position=< 229,  143> velocity=< 2,  5>
+position=< 218,  144> velocity=< 2, -1>
+position=< 231,  141> velocity=< 4, -2>
+position=< 190,  141> velocity=<-2,  2>
+position=< 206,  152> velocity=< 1, -4>
+position=< 228,  151> velocity=<-5, -3>
+position=< 192,  139> velocity=< 2,  4> 

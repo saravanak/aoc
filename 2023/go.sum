@@ -1,0 +1,4 @@
+4d63.com/strrev v1.1.0 h1:NB+AegmbLuD7vALJi2Vniygp0oRTmIwDx9s+LpdxyPg=
+4d63.com/strrev v1.1.0/go.mod h1:kEuPysb/XCi0tmXRkB0rDxURbEEyeTlvSbOK+SqVbvA=
+github.com/leighmcculloch/go-strrev v1.1.0 h1:G23tByvBLWSzyrupkBfudqWD4DsU7GGzuWZ30wnhcug=
+github.com/leighmcculloch/go-strrev v1.1.0/go.mod h1:nnL5E2ETfRpZCCy0pZXnJh0XCxqWh8/5KKV//Y9dUGE=
