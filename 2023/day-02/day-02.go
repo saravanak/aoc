@@ -1,16 +1,18 @@
 package main
 
 import (
-	// "4d63.com/strrev"
 	b "aoc/utils"
 	"fmt"
+	"log"
+	"os"
 	"regexp"
-
-	// "regexp"
-	// "maps"
 	"strconv"
 	"strings"
 )
+
+type programArgs struct {
+	should_break bool // True for part1 and False for part 2
+}
 
 type draw struct {
 	red   int
@@ -23,7 +25,7 @@ type game struct {
 	game_id int
 }
 
-func part1() {
+func part1(programOptions programArgs) {
 
 	// input_file := "./data/02/example.txt"
 	input_file := "./data/02/day-02.txt"
@@ -36,9 +38,9 @@ func part1() {
 
 	part_2_sum := 0
 	for _, calibWord := range fileLines {
-		fmt.Println(calibWord)
+		log.Println(calibWord)
 		game := splitDraws(calibWord)
-		fmt.Println(game)
+		log.Println(game)
 		is_valid_game := true
 		max_greens := 0
 		max_blues := 0
@@ -57,21 +59,23 @@ func part1() {
 			if currentDraw.red > 0 && currentDraw.red > max_reds {
 				max_reds = currentDraw.red
 			}
-			// if !is_valid_game {
-			// 	break
-			// }
+			if programOptions.should_break {
+				if !is_valid_game {
+					break
+				}
+			}
 		}
 		if is_valid_game {
-			fmt.Printf("We have %d as valid game\n", game.game_id)
+			log.Printf("We have %d as valid game\n", game.game_id)
 			sum = sum + game.game_id
 		}
 		power_for_game := (max_greens * max_blues * max_reds)
 
-		fmt.Printf("Power: %d; Red: %d, Green: %d, Blue: %d\n", power_for_game, max_reds, max_greens, max_blues)
+		log.Printf("Power: %d; Red: %d, Green: %d, Blue: %d\n", power_for_game, max_reds, max_greens, max_blues)
 		part_2_sum = part_2_sum + power_for_game
 	}
 
-	fmt.Println(sum)
+	fmt.Printf("Part 1: %d\n", sum)
 	fmt.Printf("Part 2: %d", part_2_sum)
 
 }
@@ -112,5 +116,12 @@ func splitDraws(game_desc string) game {
 }
 
 func main() {
-	part1()
+	fmt.Println(os.Args)
+	if os.Args[1] == "part2" {
+		fmt.Println("running day02/part 02!!!")
+		part1(programArgs{should_break: false})
+	} else {
+		fmt.Println("running day02/part 01!!!")
+		part1(programArgs{should_break: true})
+	}
 }
