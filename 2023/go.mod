@@ -1,4 +1,4 @@
-module aoc/day-01
+module aoc
 
 go 1.21.5
 

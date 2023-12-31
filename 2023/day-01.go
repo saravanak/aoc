@@ -2,40 +2,18 @@ package main
 
 import (
 	"4d63.com/strrev"
-	"bufio"
+	b "aoc/utils"
 	"fmt"
-	"os"
 	"regexp"
 	"strconv"
 	"strings"
 )
 
-func readFileAsArray(name string) []string {
-	readFile, err := os.Open(name)
-	check(err)
-	fileScanner := bufio.NewScanner(readFile)
-	fileScanner.Split(bufio.ScanLines)
-	var fileLines []string
-
-	for fileScanner.Scan() {
-		fileLines = append(fileLines, fileScanner.Text())
-	}
-
-	readFile.Close()
-
-	return fileLines
-
-}
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
 func part1() {
 
 	//input_file := "./data/01/example.txt"
 	input_file := "./data/01/day-01.txt"
-	fileLines := readFileAsArray(input_file)
+	fileLines := b.ReadFileAsArray(input_file)
 
 	match, _ := regexp.MatchString("(\\d)", fileLines[0])
 	fmt.Println(match)
@@ -59,7 +37,7 @@ func part1() {
 func part2() {
 	// input_file := "./data/01/example-2.txt"
 	input_file := "./data/01/day-01.txt"
-	fileLines := readFileAsArray(input_file)
+	fileLines := b.ReadFileAsArray(input_file)
 
 	digit_names := [...]string{"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"}
 
