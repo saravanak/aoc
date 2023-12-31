@@ -96,8 +96,6 @@ func splitDraws(game_desc string) game {
 		var currentDraw = draw{red: 0, blue: 0, green: 0}
 		for _, drawString := range gameDrawsParts {
 			gameColors := game_draw_regexp.FindStringSubmatch(drawString)
-			// fmt.Printf("%#v\n", gameColors)
-			// fmt.Printf("%#v\n", game_draw_regexp.SubexpNames())
 
 			count, _ := strconv.Atoi(gameColors[1])
 
@@ -116,7 +114,6 @@ func splitDraws(game_desc string) game {
 }
 
 func main() {
-	fmt.Println(os.Args)
 	if os.Args[1] == "part2" {
 		fmt.Println("running day02/part 02!!!")
 		part1(programArgs{should_break: false})

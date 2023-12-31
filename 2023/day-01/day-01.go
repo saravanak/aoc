@@ -4,6 +4,8 @@ import (
 	"4d63.com/strrev"
 	b "aoc/utils"
 	"fmt"
+	"log"
+	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -16,14 +18,14 @@ func part1() {
 	fileLines := b.ReadFileAsArray(input_file)
 
 	match, _ := regexp.MatchString("(\\d)", fileLines[0])
-	fmt.Println(match)
+	log.Println(match)
 
 	matcherRegexp, _ := regexp.Compile("(\\d)")
 
 	sum := 0
 
 	for _, calibWord := range fileLines {
-		fmt.Println(calibWord)
+		log.Println(calibWord)
 		match_slices := matcherRegexp.FindAllString(calibWord, -1)
 		two_digits := match_slices[0] + match_slices[len(match_slices)-1]
 		as_number, _ := strconv.Atoi(two_digits)
@@ -55,7 +57,7 @@ func part2() {
 	sum := 0
 
 	for _, calibWord := range fileLines {
-		fmt.Println(calibWord)
+		log.Println(calibWord)
 		startMatch := normalRegexp.FindAllString(calibWord, -1)
 		endMatch := reversedRegexp.FindAllString(strrev.Reverse(calibWord), -1)
 
@@ -69,7 +71,7 @@ func part2() {
 		end_slices := as_number_slice(endMatches)
 
 		two_digits := number_slices[0] + end_slices[0]
-		fmt.Println(number_slices, two_digits)
+		log.Println(number_slices, two_digits)
 		as_number, _ := strconv.Atoi(two_digits)
 
 		sum += as_number
@@ -110,5 +112,11 @@ func as_number_slice(matches []string) []string {
 }
 func main() {
 
-	part2()
+	if os.Args[1] == "part2" {
+		fmt.Println("running day02/part 02!!!")
+		part2()
+	} else {
+		fmt.Println("running day02/part 01!!!")
+		part1()
+	}
 }

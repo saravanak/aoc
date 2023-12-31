@@ -26,3 +26,27 @@ func check(e error) {
 		panic(e)
 	}
 }
+
+func Filter[T any](slice []T, comp func(T) bool) []T {
+
+	returnVal := make([]T, 0)
+	for _, item := range slice {
+		predicateValue := comp(item)
+		if predicateValue {
+			returnVal = append(returnVal, item)
+		}
+	}
+	return returnVal
+
+}
+
+func Map[T any, R any](slice []T, mapper func(T) R) []R {
+
+	returnVal := make([]R, 0)
+	for _, item := range slice {
+		predicateValue := mapper(item)
+		returnVal = append(returnVal, predicateValue)
+	}
+	return returnVal
+
+}
