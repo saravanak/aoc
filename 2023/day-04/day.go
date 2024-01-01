@@ -2,6 +2,7 @@ package main
 
 /**
 * Part 1: 21959
+* Part 2: 5132675
  */
 import (
 	b "aoc/utils"
