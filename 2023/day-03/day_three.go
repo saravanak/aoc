@@ -5,6 +5,7 @@ package main
 * Defines methods on Structs and works with pointers
 *
 * Part 1: 520135
+* Part 2:
  */
 import (
 	"fmt"
