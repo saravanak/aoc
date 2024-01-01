@@ -2,10 +2,11 @@ package main
 
 import (
 	b "aoc/utils"
-	"github.com/Goldziher/go-utils/sliceutils"
-	"github.com/alecthomas/participle/v2"
 	"log"
 	"slices"
+
+	"github.com/Goldziher/go-utils/sliceutils"
+	"github.com/alecthomas/participle/v2"
 )
 
 func Parse(contents string) *SeedingPlan {
@@ -54,17 +55,36 @@ func (section *MappingSection) GetMappedIds(sourceId int) int {
 	return sourceId
 }
 func (section *MappingSection) SplitInputRange(inputRange AddressRange, outputs *[]AddressRange) {
+
+	//Queue of ranges for which there is no mapping yet
+	var currentSplitRanges = []AddressRange{inputRange}
+
 	for mappingRecordIndex, mappingRecord := range section.MappingLines {
+
+		if len(currentSplitRanges) == 0 {
+			break
+		}
 		var (
 			sourceRange = AddressRange{start: *mappingRecord.SourceStart, end: *mappingRecord.SourceStart + *mappingRecord.RangeLength - 1}
 		)
 
-		splitRanges := splitRange(inputRange, sourceRange)
+		splitRanges := splitRange(currentSplitRanges[0], sourceRange)
+
+		if len(splitRanges) > 0 {
+			currentSplitRanges = slices.Delete(currentSplitRanges, 0, 1)
+			for _, currentSplit := range splitRanges {
+				if currentSplit.start >= sourceRange.start && currentSplit.end <= sourceRange.end {
+					*outputs = append(*outputs, currentSplit)
+				} else {
+					currentSplitRanges = append(currentSplitRanges, currentSplit)
+				}
+			}
+		}
 
 		log.Printf(".......For range %+v recorded split as %+v from rule %d\n", inputRange, splitRanges, mappingRecordIndex)
 
-		*outputs = append(*outputs, splitRanges...)
 	}
+	*outputs = append(*outputs, currentSplitRanges...)
 }
 func (section *MappingSection) TranslateRanges(splitRange []AddressRange) []AddressRange {
 	var returnValue = make([]AddressRange, 0)
@@ -169,7 +189,7 @@ func (s *SeedingPlan) EvaluatePart2(c *Context) {
 
 	// log.Println(c.seedsRange)
 
-	for _, mappingSection := range b.Map(s.Commands[1:2], (func(c *Command) *MappingSection { return c.MappingSection })) {
+	for _, mappingSection := range b.Map(s.Commands[1:], (func(c *Command) *MappingSection { return c.MappingSection })) {
 		log.Println("ENTERING STAGE", mappingSection.MappingHeader, c.seedsRange)
 		var allTranslatedRanges = make([]AddressRange, 0)
 		for _, seed := range c.seedsRange {
