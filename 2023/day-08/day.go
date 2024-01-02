@@ -3,8 +3,8 @@ package main
 
 /**
 *
-*  Part 1: 248569531
-*  Part 2: 250382098
+*  Part 1: 17873
+*  Part 2:
  */
 import (
 	"fmt"
@@ -20,10 +20,13 @@ func part02(ast *CamelMap) {
 	ast.EvaluatePart2()
 }
 
+var nodeMap = make(map[string]*Node)
+
 func main() {
 
 	// fileName := "./data/08/example.txt"
 	// fileName := "./data/08/example2.txt"
+	// fileName := "./data/08/example3.txt"
 	fileName := "./data/08/full.txt"
 	fileContents, _ := script.File(fileName).String()
 
@@ -31,6 +34,10 @@ func main() {
 
 	if ast == nil {
 		return
+	}
+	for _, nodeMapping := range ast.Commands {
+		var node = nodeMapping.NodesMappings.Source
+		nodeMap[node.Name] = node
 	}
 
 	if os.Args[1] == "part2" {

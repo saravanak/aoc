@@ -30,19 +30,12 @@ func Parse(contents string) *CamelMap {
 }
 
 func (s *CamelMap) Evaluate() {
-
-	log.Printf("%s", s.DirectionCommand)
-	log.Printf("%s", s.Commands[1].NodesMappings.Source.Name)
-	log.Printf("%s", *s.Commands[1].NodesMappings.Source.Left)
-
-	var nodeMap = make(map[string]*Node)
-	for _, nodeMapping := range s.Commands[1:] {
-		var node = nodeMapping.NodesMappings.Source
-		nodeMap[node.Name] = node
-	}
-
 	log.Printf("%+v", nodeMap)
 	walkNodesPart1(nodeMap, s.DirectionCommand)
+}
+
+func (s *CamelMap) EvaluatePart2() {
+
 }
 
 func walkNodesPart1(nodeMap map[string]*Node, direction string) {
@@ -69,8 +62,4 @@ func walkNodesPart1(nodeMap map[string]*Node, direction string) {
 		iterationCount += 1
 	}
 	log.Printf("Journey took %d Steps", iterationCount)
-}
-
-func (s *CamelMap) EvaluatePart2() {
-
 }
