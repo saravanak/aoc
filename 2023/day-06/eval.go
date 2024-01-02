@@ -2,11 +2,14 @@ package main
 
 import (
 	// b "aoc/utils"
-	"github.com/alecthomas/participle/v2"
+	"fmt"
 	"log"
+	"strconv"
+
+	"github.com/alecthomas/participle/v2"
 )
 
-var MAX_ITERS = 10
+var MAX_ITERS = 10000
 
 func Parse(contents string) *RacingRecords {
 
@@ -43,10 +46,33 @@ func (s *RacingRecords) Evaluate() {
 	log.Printf("Solution is %d", sum)
 }
 
+func (s *RacingRecords) EvaluatePart2() {
+
+	var times = *s.Commands[0].TimeCommand.RaceTime
+	var distances = *s.Commands[1].DistanceCommand.Distances
+
+	var timeString = ""
+	var distanceString = ""
+	for raceIndex := 0; raceIndex < len(times); raceIndex++ {
+		timeString += fmt.Sprintf("%d", times[raceIndex])
+		distanceString += fmt.Sprintf("%d", distances[raceIndex])
+	}
+	// for raceIndex := 2; raceIndex < 3; raceIndex++ {
+	var fullTime, _ = strconv.Atoi(timeString)
+	var fullDistance, _ = strconv.Atoi(distanceString)
+	var high = gradientUp(fullTime, fullDistance)
+	var low = gradientDown(fullTime, fullDistance)
+
+	var sum = (high - low + 1)
+
+	log.Printf("Solution is %d", sum)
+}
+
 func gradientUp(totalTime int, targetDistance int) int {
 	var high = totalTime
 	var low = 0
 	var prevHigh = high
+	var direction = -1 // +1 for right and -1 for left.
 	var (
 		currentDistance     = 0
 		nextMsDistance  int = 0
@@ -58,10 +84,18 @@ func gradientUp(totalTime int, targetDistance int) int {
 
 	for !stopCondition {
 		circuitBreaker++
-		if circuitBreaker > MAX_ITERS || low >= high {
+		if circuitBreaker > MAX_ITERS {
 			log.Printf("CIRCUIT BREAKING!!")
 			break
 		}
+
+		if direction > 0 {
+			low = high
+			high = high + (totalTime-high)/2
+		} else {
+			high = high - (high-low)/2
+		}
+
 		log.Printf("Low: %d; High : %d; prevHigh: %d", low, high, prevHigh)
 		currentDistance = distanceCovered(high, totalTime)
 		nextMsDistance = distanceCovered(high+1, totalTime)
@@ -72,11 +106,9 @@ func gradientUp(totalTime int, targetDistance int) int {
 			break
 		}
 		if currentDistance < targetDistance {
-			prevHigh = high
-			high = low + (high-low)/2 - 1
+			direction = -1
 		} else {
-			low = high
-			high = high + (prevHigh-low)/2
+			direction = 1
 		}
 	}
 	return high
@@ -91,6 +123,7 @@ func gradientDown(totalTime int, targetDistance int) int {
 		currentDistance = 0
 		prevMsDistance  = 0
 	)
+	var direction = +1 // +1 for right and -1 for left.
 	var stopCondition = false
 	var circuitBreaker = 0
 
@@ -98,25 +131,32 @@ func gradientDown(totalTime int, targetDistance int) int {
 
 	for !stopCondition {
 		circuitBreaker++
-		if circuitBreaker > MAX_ITERS || low >= high {
+		if circuitBreaker > MAX_ITERS {
 			log.Printf("CIRCUIT BREAKING!!")
 			break
 		}
-		log.Printf("Low: %d; High : %d; currentBound: %d", low, high, prevLow)
+
+		log.Printf("Low: %d; High : %d; currentBound: %d, direction : %d", low, high, prevLow, direction)
+		if direction > 0 {
+			low = low + (high-low)/2
+		} else {
+			prevLow = low
+			low = (high - low) / 2
+			high = prevLow
+		}
+		log.Printf("Low: %d; High : %d", low, high)
 		currentDistance = distanceCovered(low, totalTime)
 		prevMsDistance = distanceCovered(low-1, totalTime)
 
-		if currentDistance >= targetDistance && prevMsDistance <= targetDistance {
+		if currentDistance > targetDistance && prevMsDistance <= targetDistance {
 			stopCondition = true
 			break
 		}
 		log.Printf("currentDistance: %d ", currentDistance)
 		if currentDistance < targetDistance {
-			prevLow = low
-			low = low + (high-low)/2
+			direction = 1
 		} else {
-			high = low
-			low = low + (prevLow-low)/2
+			direction = -1
 		}
 	}
 	return low
@@ -127,7 +167,4 @@ func distanceCovered(waitTime int, totalTime int) int {
 	var timeTravelling = totalTime - waitTime
 
 	return startingSpeed * timeTravelling
-}
-func (s *RacingRecords) EvaluatePart2() {
-
 }

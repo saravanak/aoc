@@ -3,6 +3,8 @@ package main
 
 /**
 *
+*  Part 1: 440000
+*  Part 2: 26187338
  */
 import (
 	"fmt"
@@ -20,8 +22,8 @@ func part02(ast *RacingRecords) {
 
 func main() {
 
-	fileName := "./data/06/example.txt"
-	// fileName := "./data/06/full.txt"
+	// fileName := "./data/06/example.txt"
+	fileName := "./data/06/full.txt"
 	fileContents, _ := script.File(fileName).String()
 
 	ast := Parse(fileContents)
