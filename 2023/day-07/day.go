@@ -4,7 +4,7 @@ package main
 /**
 *
 *  Part 1: 248569531
-*  Part 2: !251171389 (too high) !250702249 (too high)
+*  Part 2: 250382098
  */
 import (
 	"fmt"

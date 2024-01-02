@@ -52,7 +52,7 @@ func (s *CardsList) Evaluate() {
 	var cards = make([]Card, 0)
 
 	for _, card := range s.Cards {
-		card.Categorize(false)
+		card.Categorize()
 		cards = append(cards, *card)
 		log.Printf("%s: %s\n", *card.CardName, card.catetgory)
 	}
@@ -77,7 +77,7 @@ func (s *CardsList) EvaluatePart2() {
 	var cards = make([]Card, 0)
 
 	for _, card := range s.Cards {
-		card.Categorize(true)
+		card.CategorizeWithJoker()
 		cards = append(cards, *card)
 	}
 
@@ -137,7 +137,7 @@ func sortCards(cards []Card, letterOrders map[rune]int) {
 	log.Printf("After Sort: %+v", b.Map(cards, (func(a Card) string { return *a.CardName })))
 }
 
-func (c *Card) Categorize(withJoker bool) {
+func (c *Card) Categorize() {
 	c.frequencyMap = make(map[rune]int)
 
 	for _, character := range *c.CardName {
@@ -150,6 +150,53 @@ func (c *Card) Categorize(withJoker bool) {
 	}
 
 	slices.SortFunc(counts, b.IntComparer)
+
+	var countsAsStrings = strings.Join(b.Map(counts, (func(a int) string {
+		return strconv.Itoa(a)
+	})), ",")
+
+	switch countsAsStrings {
+	case "5":
+		c.catetgory = "five-of-a-kind"
+	case "4,1":
+		c.catetgory = "four-of-a-kind"
+	case "3,2":
+		c.catetgory = "full-house"
+	case "3,1,1":
+		c.catetgory = "three-of-a-kind"
+	case "2,2,1":
+		c.catetgory = "two-pair"
+	case "2,1,1,1":
+		c.catetgory = "one-pair"
+	case "1,1,1,1,1":
+		c.catetgory = "high-card"
+	}
+}
+
+func (c *Card) CategorizeWithJoker() {
+	c.frequencyMap = make(map[rune]int)
+
+	jCounts := 0
+	for _, character := range *c.CardName {
+		if character == 'J' {
+			jCounts += 1
+		} else {
+			c.frequencyMap[character] += 1
+		}
+	}
+
+	var counts = make([]int, 0)
+	for _, v := range c.frequencyMap {
+		counts = append(counts, v)
+	}
+
+	slices.SortFunc(counts, b.IntComparer)
+
+	if len(counts) > 0 {
+		counts[0] += jCounts
+	} else {
+		counts = append(counts, jCounts)
+	}
 
 	var countsAsStrings = strings.Join(b.Map(counts, (func(a int) string {
 		return strconv.Itoa(a)
