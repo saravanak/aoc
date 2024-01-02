@@ -19,9 +19,11 @@ type CardsList struct {
 }
 
 type Card struct {
-	Pos       lexer.Position
-	CardName  *string `@Ident`
-	Bid       *int    `@Number`
-	EOL       string  `EOL`
-	catetgory string
+	Pos          lexer.Position
+	CardName     *string `@Ident`
+	Bid          *int    `@Number`
+	EOL          string  `EOL`
+	catetgory    string
+	frequencyMap map[rune]int
+	sortedName   string
 }

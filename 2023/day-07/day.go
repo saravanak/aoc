@@ -3,8 +3,8 @@ package main
 
 /**
 *
-*  Part 1:
-*  Part 2:
+*  Part 1: 248569531
+*  Part 2: !251171389 (too high) !250702249 (too high)
  */
 import (
 	"fmt"
@@ -22,8 +22,8 @@ func part02(ast *CardsList) {
 
 func main() {
 
-	fileName := "./data/07/example.txt"
-	// fileName := "./data/07/full.txt"
+	// fileName := "./data/07/example.txt"
+	fileName := "./data/07/full.txt"
 	fileContents, _ := script.File(fileName).String()
 
 	ast := Parse(fileContents)

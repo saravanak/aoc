@@ -50,3 +50,11 @@ func Map[T any, R any](slice []T, mapper func(T) R) []R {
 	return returnVal
 
 }
+func IntComparer(a int, b int) int {
+	if a > b {
+		return -1
+	} else if a > b {
+		return 1
+	}
+	return 0
+}
