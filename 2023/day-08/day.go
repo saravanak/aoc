@@ -4,7 +4,7 @@ package main
 /**
 *
 *  Part 1: 17873
-*  Part 2:
+*  Part 2: 15746133679061
  */
 import (
 	"fmt"

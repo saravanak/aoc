@@ -6,7 +6,7 @@ import (
 
 var basicLexer = lexer.MustSimple([]lexer.SimpleRule{
 
-	{"Ident", `[A-Z]+`},
+	{"Ident", `[A-Z0-9]+`},
 	{"Punct", `[[!@#$%^&*()+_={}\|:;"'<,>.?/]|]`},
 	{"EOL", `[\n\r]+`},
 	{"whitespace", `[ \t]+`},
