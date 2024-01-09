@@ -2,7 +2,9 @@ package utils
 
 import (
 	"bufio"
+	"log"
 	"os"
+	"slices"
 )
 
 func ReadFileAsArray(name string) []string {
@@ -54,6 +56,15 @@ func Map[T any, R any](slice []T, mapper func(T) R) []R {
 func Last[T any](slice []T) T {
 	return slice[len(slice)-1]
 }
+
+func Sum(slice []int) int {
+	var result = 0
+	for _, value := range slice {
+
+		result += value
+	}
+	return result
+}
 func IntComparer(a int, b int) int {
 	if a > b {
 		return -1
@@ -61,4 +72,45 @@ func IntComparer(a int, b int) int {
 		return 1
 	}
 	return 0
+}
+
+// Finds the indices of respective arrays starting at which the two arrays are equal till the end.
+// Returns index >=0 if found else -1 for each input array in the respective order
+func Clamp[T comparable](isEnd bool, lhs []T, rhs []T) (int, int) {
+	var strategy = "end"
+
+	if !isEnd {
+		strategy = "start"
+	}
+
+	log.Printf("%sClamp lhs: %v, rhs: %v", strategy, lhs, rhs)
+	var workingLhs = slices.Clone(lhs)
+	var workingRhs = slices.Clone(rhs)
+
+	if isEnd {
+
+		slices.Reverse(workingLhs)
+		slices.Reverse(workingRhs)
+	}
+
+	var endClamp = -1
+	for index := 0; index < len(workingLhs); index++ {
+
+		if index >= len(workingRhs) {
+			break
+		}
+		if workingLhs[index] != workingRhs[index] {
+			break
+		}
+		endClamp = index
+	}
+	if endClamp == -1 {
+		return endClamp, endClamp
+	}
+	if isEnd {
+		return len(workingLhs) - endClamp - 1, len(workingRhs) - endClamp - 1
+	} else {
+		return endClamp, endClamp
+	}
+
 }

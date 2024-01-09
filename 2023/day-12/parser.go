@@ -2,12 +2,14 @@ package main
 
 import (
 	"github.com/alecthomas/participle/v2/lexer"
+
+	b "aoc/utils"
 )
 
 var basicLexer = lexer.MustSimple([]lexer.SimpleRule{
 
 	{"Ident", `[.#?]`},
-	{"Number", `[\d]`},
+	{"Number", `[\d]+`},
 	{"Punct", `,`},
 	{"EOL", `[\n\r]+`},
 	{"whitespace", `[ \t]+`},
@@ -28,4 +30,8 @@ type Checksum struct {
 	Pos            lexer.Position
 	SingleChecksum int    `@Number`
 	Comma          string `(",")?`
+}
+
+func (s SpringStatus) IntChecksums() []int {
+	return b.Map(s.Checksum, (func(checksum Checksum) int { return checksum.SingleChecksum }))
 }

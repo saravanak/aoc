@@ -22,8 +22,8 @@ func part02(ast *SpringField) {
 
 func main() {
 
-	fileName := "./data/12/example.txt"
-	// fileName := "./data/12/full.txt"
+	// fileName := "./data/12/example.txt"
+	fileName := "./data/12/full.txt"
 	fileContents, _ := script.File(fileName).String()
 
 	ast := Parse(fileContents)
