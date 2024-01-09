@@ -4,6 +4,7 @@ import (
 	// "fmt"
 	// "fmt"
 	b "aoc/utils"
+	"fmt"
 	"log"
 	"slices"
 
@@ -50,34 +51,6 @@ func (s *SpringField) Evaluate() {
 		var matchesLength = b.Map(matches, (func(aMatch []string) int { return len(aMatch[0]) }))
 		log.Printf("Match length: %v", matchesLength)
 
-		// distanceCache[springStructure[b.Last(matchIndices)[0]:]] = []int{b.Last(checksums)}
-		// var matchIndices = structureParser.FindAllStringSubmatchIndex(translatedString, -1)
-		// var leftEndClamp, rightEndClamp = b.Clamp(true, checksums, matchesLength)
-
-		// if leftEndClamp >= 0 {
-		// 	log.Printf("We've got a end clamp for %s: Left: %d , Right:%d", springStructure, leftEndClamp, rightEndClamp)
-		// 	var partToWorkWith = springStructure[0:matchIndices[rightEndClamp][0]]
-		// 	var remainingChecksumArray = checksums[0:leftEndClamp]
-		// 	log.Printf("partToWorkWith: %s", partToWorkWith)
-		// 	log.Printf("remainingChecksumArray: %v", remainingChecksumArray)
-		// 	var matchingCombinations = generateValidCombinations(partToWorkWith, remainingChecksumArray)
-		// 	totalArrangements += matchingCombinations
-		// 	log.Printf("No of combinations %d", matchingCombinations)
-		// 	continue
-		// }
-		// var leftStartClamp, rightStartClamp = b.Clamp(false, checksums, matchesLength)
-		//
-		// if leftStartClamp >= 0 {
-		// 	log.Printf("We've got a start clamp for %s: Left: %d , Right:%d", springStructure, leftStartClamp, rightStartClamp)
-		// 	var partToWorkWith = springStructure[matchIndices[rightStartClamp][1]+1:]
-		// 	var remainingChecksumArray = checksums[leftStartClamp+1:]
-		// 	log.Printf("partToWorkWith: %s", partToWorkWith)
-		// 	log.Printf("remainingChecksumArray: %v", remainingChecksumArray)
-		// 	var matchingCombinations = generateValidCombinations(partToWorkWith, remainingChecksumArray)
-		// 	totalArrangements += matchingCombinations
-		// 	log.Printf("No of combinations %d", matchingCombinations)
-		// 	continue
-		// }
 		var partToWorkWith = springStructure
 		var remainingChecksumArray = checksums
 		log.Printf("partToWorkWith: %s", partToWorkWith)
@@ -85,10 +58,9 @@ func (s *SpringField) Evaluate() {
 		var matchingCombinations = generateValidCombinations(partToWorkWith, remainingChecksumArray)
 		log.Printf("No of combinations %d", matchingCombinations)
 		totalArrangements += matchingCombinations
-		// log.Printf("%v", distanceCache)
 	}
 
-	log.Printf("total arrangements %d", totalArrangements)
+	fmt.Printf("total arrangements %d\n", totalArrangements)
 
 }
 
