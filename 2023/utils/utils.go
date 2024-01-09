@@ -50,6 +50,10 @@ func Map[T any, R any](slice []T, mapper func(T) R) []R {
 	return returnVal
 
 }
+
+func Last[T any](slice []T) T {
+	return slice[len(slice)-1]
+}
 func IntComparer(a int, b int) int {
 	if a > b {
 		return -1
