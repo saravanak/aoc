@@ -2,3 +2,5 @@
 <https://antonz.org/in-browser-code-playgrounds/>
 <https://mathworld.wolfram.com/LagrangeInterpolatingPolynomial.html>
 <https://github.com/abagames/crisp-game-lib> <https://ashkenas.com/docco/>
+<https://andersource.dev/> <https://meyerweb.com/eric/tools/s5/primer.html>
+<https://wingolog.org/>
