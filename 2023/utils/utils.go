@@ -114,3 +114,19 @@ func Clamp[T comparable](isEnd bool, lhs []T, rhs []T) (int, int) {
 	}
 
 }
+
+func Transpose[T any](input [][]T) [][]T {
+
+	var returnVal = make([][]T, len(input[0]))
+
+	for lineIndex, currentLine := range input {
+		for columnIndex, currentRune := range currentLine {
+			if returnVal[columnIndex] == nil {
+				returnVal[columnIndex] = make([]T, len(input))
+			}
+			returnVal[columnIndex][lineIndex] = currentRune
+		}
+	}
+	log.Printf("%v %d %d", returnVal, len(returnVal), len(returnVal[0]))
+	return returnVal
+}
