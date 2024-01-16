@@ -2,6 +2,9 @@ package utils
 
 import (
 	"bufio"
+	"bytes"
+	"crypto/sha256"
+	"fmt"
 	"log"
 	"os"
 	"slices"
@@ -129,4 +132,42 @@ func Transpose[T any](input [][]T) [][]T {
 	}
 	log.Printf("%v %d %d", returnVal, len(returnVal), len(returnVal[0]))
 	return returnVal
+}
+func RotateClockwise[T any](input [][]T) [][]T {
+
+	var returnVal = make([][]T, len(input[0]))
+
+	for lineIndex, currentLine := range input {
+		for columnIndex := range currentLine {
+			if returnVal[columnIndex] == nil {
+				returnVal[columnIndex] = make([]T, len(input))
+			}
+
+			var rotateCol = len(input[0]) - 1 - columnIndex
+			returnVal[lineIndex][columnIndex] = input[rotateCol][lineIndex]
+		}
+	}
+	return returnVal
+}
+
+func RotateAntiClockwise[T any](input [][]T) [][]T {
+
+	var returnVal = make([][]T, len(input[0]))
+
+	for lineIndex, currentLine := range input {
+		for columnIndex := range currentLine {
+			if returnVal[columnIndex] == nil {
+				returnVal[columnIndex] = make([]T, len(input))
+			}
+
+			var rotateCol = len(input[0]) - 1 - lineIndex
+			returnVal[lineIndex][columnIndex] = input[columnIndex][rotateCol]
+		}
+	}
+	return returnVal
+}
+func GetSha256(b *bytes.Buffer) string {
+	h := sha256.New()
+	h.Write(b.Bytes())
+	return fmt.Sprintf("%x", h.Sum(nil))
 }

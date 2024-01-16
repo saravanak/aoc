@@ -12,18 +12,18 @@ import (
 	"os"
 )
 
-func part01(ast *SpringField) {
+func part01(ast *PipeMap) {
 	ast.Evaluate()
 }
 
-func part02(ast *SpringField) {
+func part02(ast *PipeMap) {
 	ast.EvaluatePart2()
 }
 
 func main() {
 
-	fileName := "./data/13/example.txt"
-	// fileName := "./data/13/full.txt"
+	fileName := "./data/14/example.txt"
+	// fileName := "./data/14/full.txt"
 	fileContents, _ := script.File(fileName).String()
 
 	ast := Parse(fileContents)
@@ -33,10 +33,10 @@ func main() {
 	}
 
 	if os.Args[1] == "part2" {
-		fmt.Println("running day13/part 02!!!")
+		fmt.Println("running day14/part 02!!!")
 		part02(ast)
 	} else {
-		fmt.Println("running day13/part 01!!!")
+		fmt.Println("running day14/part 01!!!")
 		part01(ast)
 	}
 
