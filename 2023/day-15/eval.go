@@ -2,6 +2,9 @@ package main
 
 import (
 	"log"
+	"slices"
+	"strconv"
+	"strings"
 
 	"github.com/alecthomas/participle/v2"
 )
@@ -23,9 +26,6 @@ func Parse(contents string) *ProgramText {
 }
 
 func (s *ProgramText) Evaluate() {
-
-	// log.Printf("%v", s.Commands)
-
 	var sum = 0
 	for _, command := range *s.Commands {
 		var currentHash = calcWeights(command.Word)
@@ -38,11 +38,6 @@ func (s *ProgramText) Evaluate() {
 var weights = make(map[string]int)
 
 func calcWeights(input string) int {
-	//   Determine the ASCII code for the current character of the string.
-	// Increase the current value by the ASCII code you just determined.
-	// Set the current value to itself multiplied by 17.
-	// Set the current value to the remainder of dividing itself by 256.
-
 	var result = 0
 
 	// log.Printf("%v", weights)
@@ -61,12 +56,10 @@ func calcWeights(input string) int {
 
 	var startIndex = 0
 	if foundCachedValue {
-		// log.Printf("Using cache %s %d %d", input[0:currentSearchIndex], result, currentSearchIndex)
 		startIndex = currentSearchIndex
 	}
 	for i := startIndex; i < len(input); i++ {
 		var asciiValue = int(input[i])
-		// log.Printf("%d %s", asciiValue, input[startIndex:i+1])
 		result += asciiValue
 		result *= 17
 		result %= 256
@@ -76,6 +69,66 @@ func calcWeights(input string) int {
 	return result
 }
 
-func (s *ProgramText) EvaluatePart2() {
+type LenseSlot struct {
+	label string
+	fl    int //focallen
+}
 
+type Box struct {
+	lenses []LenseSlot
+}
+
+func (s *ProgramText) EvaluatePart2() {
+	s.Evaluate() // prime the maps
+
+	var boxes = make([]Box, 256)
+
+	for _, box := range boxes {
+		box.lenses = make([]LenseSlot, 0)
+	}
+	for _, command := range *s.Commands {
+		var currentHash = calcWeights(command.Word)
+
+		var splits = strings.Split(command.Word, "=")
+
+		if len(splits) == 1 {
+			var dashSplit = strings.Split(command.Word, "-")
+			var boxNumber = weights[dashSplit[0]]
+
+			var label = dashSplit[0]
+			var lenses = boxes[boxNumber].lenses
+			log.Printf("Remove lense at box: %d label %s", boxNumber, label)
+
+			var lenseWithSameLabel = slices.IndexFunc(lenses, (func(lense LenseSlot) bool {
+				return lense.label == label
+			}))
+			if lenseWithSameLabel >= 0 {
+				boxes[boxNumber].lenses = slices.Delete(lenses, lenseWithSameLabel, lenseWithSameLabel+1)
+			}
+		} else {
+			var fl, _ = strconv.Atoi(splits[1])
+			var boxNumber = weights[splits[0]]
+			var label = splits[0]
+			log.Printf("Adding lense to box %d with label %s and fl %d", boxNumber, label, fl)
+			var lenses = boxes[boxNumber].lenses
+
+			var lenseWithSameLabel = slices.IndexFunc(lenses, (func(lense LenseSlot) bool {
+				return lense.label == label
+			}))
+			if lenseWithSameLabel >= 0 {
+				lenses[lenseWithSameLabel].fl = fl
+			} else {
+				boxes[boxNumber].lenses = append(lenses, LenseSlot{label, fl})
+			}
+		}
+		log.Printf("'%s' :%d", command.Word, currentHash)
+	}
+	var sum = 0
+	for boxIndex, box := range boxes {
+		for lenseIndex, lense := range box.lenses {
+			sum += (boxIndex + 1) * (lenseIndex + 1) * lense.fl
+		}
+	}
+
+	log.Printf("%d", sum)
 }
