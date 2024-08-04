@@ -8,7 +8,7 @@ import (
 )
 
 func part01(ast *PipeMap) {
-
+	ast.Evaluate()
 }
 
 func part02(ast *PipeMap) {
