@@ -17,7 +17,9 @@ func part02(ast *PipeMap) {
 
 func main() {
 
-	fileName := "./data/17/example.txt"
+	// fileName := "./data/17/example.txt"
+
+	fileName := "./data/17/2x2.txt"
 	// fileName := "./data/17/full.txt"
 	fileContents, _ := script.File(fileName).String()
 
